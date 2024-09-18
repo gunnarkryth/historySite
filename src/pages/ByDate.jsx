@@ -23,6 +23,8 @@ export const ByDate = () => {
           `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/${month}/${day}`
         );
         const data = await response.json();
+        console.log(data);
+
         const fiveEvents = data.events.slice(0, 5);
         setEvents(fiveEvents);
       } catch (error) {
@@ -76,7 +78,7 @@ export const ByDate = () => {
           ))}
         </ul>
       ) : (
-        !error && <p>No events</p>
+        error && <p>No events</p>
       )}
     </>
   );

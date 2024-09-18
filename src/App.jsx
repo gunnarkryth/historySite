@@ -14,7 +14,7 @@ function App() {
           <li>
             <Link to="/">TODAY</Link>
             <Link to="/by_date">BY DATE</Link>
-            <Link to="/since">Home</Link>
+            <Link to="/since">SINCE</Link>
           </li>
         </ul>
       </nav>
