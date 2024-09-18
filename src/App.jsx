@@ -1,19 +1,29 @@
-import { BrowserRouter, Routes, Route } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { useState, useEffect, useReducer } from "react";
 import "./assets/styles/App.scss";
-import { Home } from "./pages/Home";
+
+import { Today } from "./pages/Today";
+import { ByDate } from "./pages/ByDate";
+import { Since } from "./pages/Since";
 
 function App() {
-  <BrowserRouter>
-  <Router>
-    <Route>
-      
-    </Route>
-  </Router>
-  </BrowserRouter>
   return (
-    <Wrapper>
-      <Atom></Atom>
-    </Wrapper>
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">TODAY</Link>
+            <Link to="/by_date">BY DATE</Link>
+            <Link to="/since">Home</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Today />} />
+        <Route path="/by_date" element={<ByDate />} />
+        <Route path="/since" element={<Since />} />
+      </Routes>
+    </Router>
   );
 }
 
