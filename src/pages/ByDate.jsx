@@ -42,49 +42,40 @@ export const ByDate = () => {
   return (
     <>
       <Plaque>
-        <h1>ON THIS DAY</h1>
-        <h3></h3>
+        <form onSubmit={fetchEventsByDate} className={s.form}>
+          <div className={s.inputGroup}>
+            <input
+              type="text"
+              name="day"
+              id="day"
+              value={dateInput.day}
+              onChange={handleInputChange}
+              placeholder="DD"
+              required
+              pattern="\d{2}"
+              className={s.inputField}
+            />
+          </div>
+          <div className={s.inputGroup}>
+            <input
+              type="text"
+              name="month"
+              id="month"
+              value={dateInput.month}
+              onChange={handleInputChange}
+              placeholder="MM"
+              required
+              pattern="\d{2}"
+              className={s.inputField}
+            />
+          </div>
+          <button type="submit" className={s.button}>
+            ⌕
+          </button>{" "}
+        </form>
       </Plaque>
       <Nav></Nav>
-      
-      <h1 className={s.header}>BY DAY</h1>{" "}
-      {/* Add a class for the header if needed */}
-      <form onSubmit={fetchEventsByDate} className={s.form}>
-        <div className={s.inputGroup}>
-          {/* <label htmlFor="day">Day (DD):</label> */}
-          <input
-            type="text"
-            name="day"
-            id="day"
-            value={dateInput.day}
-            onChange={handleInputChange}
-            placeholder="DD"
-            required
-            pattern="\d{2}"
-            className={s.inputField} // Apply class for inputs
-          />
-        </div>
-        <div className={s.inputGroup}>
-          {/* <label htmlFor="month">Month (MM):</label> */}
-          <input
-            type="text"
-            name="month"
-            id="month"
-            value={dateInput.month}
-            onChange={handleInputChange}
-            placeholder="MM"
-            required
-            pattern="\d{2}"
-            className={s.inputField} // Apply class for inputs
-          />
-        </div>
-        <button type="submit" className={s.button}>
-          ⌕
-        </button>{" "}
-        {/* Style the button */}
-      </form>
       {error && <p className={s.error}>{error}</p>}{" "}
-      {/* Apply a class for errors */}
       {events.length > 0 ? (
         <section className={s.timeLine}>
           <ul>

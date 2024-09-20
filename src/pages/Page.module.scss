@@ -132,6 +132,7 @@ nav {
   }
 }
 .timeLine {
+  padding-top: 3rem;
   display: grid;
   grid-template-columns: 5fr 1fr;
   ul {
@@ -196,7 +197,7 @@ nav {
 form {
   display: flex;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-top: -12rem;
   // background-color: red;
 
   input {

@@ -1,6 +1,6 @@
 import s from "../../pages/Page.module.scss";
 
-export const Plaque = ({ h1, h3 }) => {
+export const Plaque = ({ h1, h3, children }) => {
   return (
     <hgroup>
       <div className={s.plaque}>
@@ -10,6 +10,7 @@ export const Plaque = ({ h1, h3 }) => {
         <div className={s.circle}>4</div>
         <h1>{h1}</h1>
         <h3>{h3}</h3>
+        {children}
       </div>
     </hgroup>
   );
