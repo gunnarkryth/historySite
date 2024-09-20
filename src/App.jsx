@@ -21,6 +21,15 @@ function App() {
   return (
     <Wrapper>
       <Router>
+        <hgroup>
+          <div className={s.plaque}>
+            <h1>ON THIS DAY</h1>
+            <h3>
+              What happened on this day - historical <br /> events, deaths and
+              births thoughout time
+            </h3>
+          </div>
+        </hgroup>
         <div className={s.hero}></div>
         <nav className={s.nav}>
           <ul>

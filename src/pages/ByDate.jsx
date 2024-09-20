@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import s from "./Page.module.scss"; // Import the styles
 
 export const ByDate = () => {
   const [dateInput, setDateInput] = useState({ month: "", day: "" });
@@ -35,9 +36,10 @@ export const ByDate = () => {
 
   return (
     <>
-      <h1>BY DAY</h1>
-      <form onSubmit={fetchEventsByDate}>
-        <div>
+      <h1 className={s.header}>BY DAY</h1>{" "}
+      {/* Add a class for the header if needed */}
+      <form onSubmit={fetchEventsByDate} className={s.form}>
+        <div className={s.inputGroup}>
           <label htmlFor="month">Month (MM):</label>
           <input
             type="text"
@@ -48,9 +50,10 @@ export const ByDate = () => {
             placeholder="MM"
             required
             pattern="\d{2}"
+            className={s.inputField} // Apply class for inputs
           />
         </div>
-        <div>
+        <div className={s.inputGroup}>
           <label htmlFor="day">Day (DD):</label>
           <input
             type="text"
@@ -61,24 +64,38 @@ export const ByDate = () => {
             placeholder="DD"
             required
             pattern="\d{2}"
+            className={s.inputField} // Apply class for inputs
           />
         </div>
-        <button type="submit">Search</button>
+        <button type="submit" className={s.button}>
+          Search
+        </button>{" "}
+        {/* Style the button */}
       </form>
-
-      {error && <p>{error}</p>}
-
+      {error && <p className={s.error}>{error}</p>}{" "}
+      {/* Apply a class for errors */}
       {events.length > 0 ? (
-        <ul>
-          {events.map((event, index) => (
-            <li key={index}>
-              <h2>{event.year}</h2>
-              <p>{event.text}</p>
-            </li>
-          ))}
-        </ul>
+        <section className={s.timeLine}>
+          <ul>
+            {events.map((event, index) => (
+              <li key={index} className={s.timeLineElement}>
+                <h2>{event.year}</h2>
+                <div className={s.hLine}>
+                  <div className={s.circle}></div>
+                </div>
+                <p>{event.text}</p>
+              </li>
+            ))}
+          </ul>
+          <span className={s.line}>
+            {" "}
+            {/* Adding the .line class */}
+            <div className={s.circle}></div>
+            <h2 className={s.scrollDown}>Scroll down for more</h2>
+          </span>
+        </section>
       ) : (
-        error && <p>No events</p>
+        error && <p className={s.error}>No events</p>
       )}
     </>
   );

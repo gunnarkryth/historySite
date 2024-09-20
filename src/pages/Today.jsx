@@ -30,25 +30,28 @@ export const Today = () => {
 
   return (
     <>
-      <hgroup>
-        <div className={s.circle}>1</div>
-        <div className={s.circle}>2</div>
-        <div className={s.circle}>3</div>
-        <div className={s.circle}>4</div>
-        <h1>ON THIS DAY</h1>
-        <h3>
-          What happened on this day - historical <br /> events, deaths and
-          births thoughout time
-        </h3>
-      </hgroup>
-      <ul>
-        {events.map((event, index) => (
-          <li key={index}>
-            <h2>{event.year}</h2>
-            <p>{event.text}</p>
-          </li>
-        ))}
-      </ul>
+      <div className={s.circle}>1</div>
+      <div className={s.circle}>2</div>
+      <div className={s.circle}>3</div>
+      <div className={s.circle}>4</div>
+
+      <section className={s.timeLine}>
+        <ul>
+          {events.map((event, index) => (
+            <li key={index} className={s.timeLineElement}>
+              <h2>{event.year}</h2>
+              <div className={s.hLine}>
+                <div className={s.circle}></div>
+              </div>
+              <p>{event.text}</p>
+            </li>
+          ))}
+        </ul>
+        <span className={s.line}>
+          <div className={s.circle}></div>
+          <h2 className={s.scrollDown}>Scroll down for more</h2>
+        </span>
+      </section>
     </>
   );
 };
