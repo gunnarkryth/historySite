@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import s from "./Page.module.scss";
+
 export const Today = () => {
   const [events, setEvents] = useState([]);
 
@@ -28,7 +30,17 @@ export const Today = () => {
 
   return (
     <>
-      <h1>On this day</h1>
+      <hgroup>
+        <div className={s.circle}>1</div>
+        <div className={s.circle}>2</div>
+        <div className={s.circle}>3</div>
+        <div className={s.circle}>4</div>
+        <h1>ON THIS DAY</h1>
+        <h3>
+          What happened on this day - historical <br /> events, deaths and
+          births thoughout time
+        </h3>
+      </hgroup>
       <ul>
         {events.map((event, index) => (
           <li key={index}>

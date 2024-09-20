@@ -3,7 +3,7 @@
   justify-content: center;
   background-color: #1e1e1e;
   width: 100%;
-  .Center {
-    width: 852px;
-  }
 }
+.Wrapper .Center {
+  width: 852px;
+}/*# sourceMappingURL=Style.module.css.map */
