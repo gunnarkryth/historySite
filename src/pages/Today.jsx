@@ -44,7 +44,7 @@ export const Today = () => {
         <ul>
           {events.map((event, index) => (
             <li key={index} className={s.timeLineElement}>
-              <h2>{event.year}</h2>
+              <h2>YEAR {event.year}</h2>
               <div className={s.hLine}>
                 <div className={s.circle}></div>
               </div>

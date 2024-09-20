@@ -73,6 +73,7 @@ export const ByDate = () => {
             ⌕
           </button>{" "}
         </form>
+        <h3 className={s.ByDateH3}>What happened on this day - Here you can enter a specific date to get only events that happened on this date</h3>
       </Plaque>
       <Nav></Nav>
       {error && <p className={s.error}>{error}</p>}{" "}
@@ -81,7 +82,7 @@ export const ByDate = () => {
           <ul>
             {events.map((event, index) => (
               <li key={index} className={s.timeLineElement}>
-                <h2>{event.year}</h2>
+                <h2>YEAR {event.year}</h2>
                 <div className={s.hLine}>
                   <div className={s.circle}></div>
                 </div>
