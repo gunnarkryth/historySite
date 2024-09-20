@@ -135,36 +135,36 @@ nav {
   display: grid;
   grid-template-columns: 5fr 1fr;
   ul {
-    text-align: right;
     // padding: 3rem 5rem 0 0;
     list-style: none;
+    text-align: right;
     li {
       display: grid;
       grid-template-columns: 1fr 0fr;
       padding-left: 5rem;
       h2 {
-        font-size: 3rem;
         margin-right: 1rem;
+        font-size: 3rem;
       }
       p {
         padding-right: 3rem;
       }
       .hLine {
+        position: relative;
         margin-top: 35px;
+        background-color: $title;
         width: 199px;
         height: 4px;
-        background-color: $title;
-        position: relative;
         .circle {
-          z-index: 100;
           position: absolute;
           top: -15.5px;
           right: -20px;
+          z-index: 100;
+          border: $title 2px solid;
           border-radius: 50%;
           background-color: $bcc;
           width: 31px;
           height: 31px;
-          border: $title 2px solid;
         }
       }
     }
@@ -185,10 +185,40 @@ nav {
     }
     .scrollDown {
       position: absolute;
+      right: -125px;
       bottom: -3rem;
       width: 242px;
-      right: -125px;
       text-align: center;
     }
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  // background-color: red;
+
+  input {
+    border: none;
+    border-bottom: $title 4px solid;
+    width: 210px;
+    font-size: 96px;
+    text-align: center;
+  }
+  button {
+    border: none;
+    width: 90px;
+    font-size: 96px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  * {
+    background-color: #00000000;
+    width: auto;
+
+    color: $title;
+    font: normal 400 96px "Limelight", sans-serif;
   }
 }

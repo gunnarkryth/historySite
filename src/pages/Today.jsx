@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+import { Plaque } from "../components/Plaque/Plaque";
+import { Nav } from "../components/Nav/Nav";
+
 import s from "./Page.module.scss";
 
 export const Today = () => {
@@ -30,10 +33,12 @@ export const Today = () => {
 
   return (
     <>
-      <div className={s.circle}>1</div>
-      <div className={s.circle}>2</div>
-      <div className={s.circle}>3</div>
-      <div className={s.circle}>4</div>
+      <Plaque
+        h1="ON THIS DAY"
+        h3="What happened on this day - historical events, deaths and
+          births thoughout time"
+      ></Plaque>
+      <Nav></Nav>
 
       <section className={s.timeLine}>
         <ul>

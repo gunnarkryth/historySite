@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { NavLink as Link } from "react-router-dom";
+
+import { Plaque } from "../components/Plaque/Plaque";
+import { Nav } from "../components/Nav/Nav";
+
 import s from "./Page.module.scss"; // Import the styles
 
 export const ByDate = () => {
@@ -36,25 +41,17 @@ export const ByDate = () => {
 
   return (
     <>
+      <Plaque>
+        <h1>ON THIS DAY</h1>
+        <h3></h3>
+      </Plaque>
+      <Nav></Nav>
+      
       <h1 className={s.header}>BY DAY</h1>{" "}
       {/* Add a class for the header if needed */}
       <form onSubmit={fetchEventsByDate} className={s.form}>
         <div className={s.inputGroup}>
-          <label htmlFor="month">Month (MM):</label>
-          <input
-            type="text"
-            name="month"
-            id="month"
-            value={dateInput.month}
-            onChange={handleInputChange}
-            placeholder="MM"
-            required
-            pattern="\d{2}"
-            className={s.inputField} // Apply class for inputs
-          />
-        </div>
-        <div className={s.inputGroup}>
-          <label htmlFor="day">Day (DD):</label>
+          {/* <label htmlFor="day">Day (DD):</label> */}
           <input
             type="text"
             name="day"
@@ -67,8 +64,22 @@ export const ByDate = () => {
             className={s.inputField} // Apply class for inputs
           />
         </div>
+        <div className={s.inputGroup}>
+          {/* <label htmlFor="month">Month (MM):</label> */}
+          <input
+            type="text"
+            name="month"
+            id="month"
+            value={dateInput.month}
+            onChange={handleInputChange}
+            placeholder="MM"
+            required
+            pattern="\d{2}"
+            className={s.inputField} // Apply class for inputs
+          />
+        </div>
         <button type="submit" className={s.button}>
-          Search
+          ⌕
         </button>{" "}
         {/* Style the button */}
       </form>
