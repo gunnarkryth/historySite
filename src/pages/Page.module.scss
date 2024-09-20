@@ -108,10 +108,13 @@ h2 {
 }
 
 nav {
-  background-color: $bcc;
+  padding-top: 3rem;
   padding-bottom: 3rem;
+  background-color: $bcc;
 
   .bar {
+    margin-top: 1rem;
+
     background-color: $plaque;
     width: 100%;
     height: 24px;
